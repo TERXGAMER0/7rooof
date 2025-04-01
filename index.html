@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>مشروع ديناميكي</title>
+  </head>
+  <body>
+    <!-- عنصر placeholder لعرض المحتوى المحمّل -->
+    <div id="content">جاري تحميل المحتوى...</div>
+
+    <script>
+      // تحميل المحتوى الكامل من الخادم
+      fetch('/getFullContent')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('content').innerHTML = data;
+        })
+        .catch(error => {
+          console.error('خطأ في تحميل المحتوى:', error);
+          document.getElementById('content').innerText = 'حدث خطأ أثناء تحميل المحتوى.';
+        });
+    </script>
+  </body>
+</html>
