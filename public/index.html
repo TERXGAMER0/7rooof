@@ -3,13 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <title>مشروع ديناميكي</title>
+    <!-- ضع هنا أي روابط CSS أو إعدادات أخرى -->
+    <style>
+      /* مثال على بعض التنسيقات الأساسية التي ستُطبق على المحتوى المحمّل */
+      body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    </style>
   </head>
   <body>
-    <!-- عنصر placeholder لعرض المحتوى المحمّل -->
+    <!-- العنصر الذي سيتم تحميل المحتوى فيه -->
     <div id="content">جاري تحميل المحتوى...</div>
 
     <script>
-      // تحميل المحتوى الكامل من الخادم
+      // عند تحميل الصفحة، يتم طلب المحتوى الكامل من الخادم
       fetch('/getFullContent')
         .then(response => response.text())
         .then(data => {
